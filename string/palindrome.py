@@ -15,6 +15,7 @@
 - O(n) (문자열을 한 번 순회)
 """
 
+# 문자열 정리: 문자/숫자만 남기고 소문자로 변환
 def isPalindrome(s:str)->bool:
     strs=[]
     for char in s:
@@ -22,7 +23,7 @@ def isPalindrome(s:str)->bool:
             strs.append(char.lower())
 
 
-    # 팬린드롬 여부 판별
+# 양쪽 비교 (팰린드롬 검사)
     while len(strs)>1:
         if strs.pop(0) != strs.pop():
             return False
