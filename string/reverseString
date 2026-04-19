@@ -9,4 +9,8 @@ def reverseString(s:list[str] )-> None:
     while left<right:                            # 서로 만나기 전까지 반복
         s[left], s[right] = s[right], s[left]    # 동시교환(swap)
         left+=1
-        right-=1
+        right-=1                                 # 결과 : None 리스트를 자체 변경
+
+#파이썬 방식
+def reverseString(s:list[str]) -> None:
+    s.reverse()
