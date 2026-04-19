@@ -9,6 +9,8 @@
   (return은 함수 안에서만 사용/ self는 클래스에서만 사용 /  타입힌트는 실행과 관계없음/ pop(0)은 느리다)
 - palindrome_deque.py   : deque- 양쪽에서 빠르게 데이터를 꺼낼 수 있음 (popleft, pop)
   (strs=deque() 객체생성 / strs:Deque 설명 / strs:Deque = deque() 생성과 설명)
+- palindrome_re.py
+   (1. 소문자로 변환 / 2. 문자/숫자만 남김 / 3. 문자열 뒤집기 4. 비교)
 ## 📘 Array
 - (추가 예정)
 
