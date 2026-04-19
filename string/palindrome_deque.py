@@ -25,5 +25,5 @@ def is_palindrome(s: str) -> bool:
     return True
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":         # 이 파일을 “직접 실행했을 때만” 아래 코드를 실행하라
     print(is_palindrome("A man, a plan, a canal: Panama"))  # True
