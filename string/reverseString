@@ -2,7 +2,7 @@
 투포인트방식
 1. return 없음
 2. 리스트를 직접 바꿈 (in-place)
-"""
+""" 
 
 def reverseString(s:list[str] )-> None:
     left, right = 0, len(s)-1                    #  left(맨앞)/right(맨뒤)
