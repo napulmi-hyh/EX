@@ -1,0 +1,51 @@
+# 로그 파일 재정렬 문제
+# --------------------------------------------------
+# [문제 설명]
+# 로그를 문자 로그와 숫자 로그로 나눈다.
+#
+# 1. 문자 로그(letter-log)
+#    - 내용(content) 기준 오름차순 정렬
+#    - 내용이 같으면 식별자(identifier) 기준 정렬
+# 2. 숫자 로그(digit-log)
+#    - 정렬하지 않고 입력 순서 그대로 유지
+# 3. 최종 결과
+#    - 문자 로그 + 숫자 로그 순서로 반환
+# --------------------------------------------------
+# [핵심 개념]
+# 1. split()
+#    문자열을 공백 기준으로 나눔
+#    예: "let1 art can" → ['let1', 'art', 'can']
+# 2. isdigit()
+#    문자열이 숫자로만 이루어져 있는지 확인
+#    → 숫자 로그인지 판단
+# 3. lambda (람다 함수)
+#    정렬 기준을 한 줄로 정의하는 함수
+#    lambda x: (x.split()[1:], x.split()[0])
+#    의미: - x.split()[1:] → 내용 (우선 비교)
+#          - x.split()[0]  → 식별자 (내용이 같을 때 비교)
+# 4. sort()   기본 오름차순 정렬
+# --------------------------------------------------
+
+from typing import List
+
+def reorderLogFiles(logs: List[str]) -> List[str]:
+    letters, digits = [], []
+
+    for log in logs:
+        if log.split()[1].isdigit():
+            digits.append(log)
+        else:
+            letters.append(log)
+
+    letters.sort(key=lambda x: (x.split()[1:], x.split()[0]))
+    return letters + digits
+
+logs = [
+    'dig1 8 1 5 1',
+    'let1 art can',
+    'dig2 3 6',
+    'let2 own kit dig',
+    'let3 art zero'
+]
+
+print(reorderLogFiles(logs))
