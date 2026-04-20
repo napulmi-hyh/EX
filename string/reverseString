@@ -1,6 +1,6 @@
 """
 투포인트방식
-1. return 없음
+1. return 없음 : 결과 반환x/ 결과 반환 return s 선언문 none 지움
 2. 리스트를 직접 바꿈 (in-place) 
 """ 
 
