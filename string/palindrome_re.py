@@ -11,7 +11,7 @@ import re   #정규식 import
 def is_palindrome(s: str) -> bool:
     s = s.lower()
 
-    # [^a-z0-9] → 소문자와 숫자가 아닌 모든 문자 제거
+    # [^a-z0-9] → 소문자와 숫자가 아닌 모든 문자 제거,e.sub() — “바꿔서 결과만 반환”/subn - 결과, 몇번바꿨는지
     s = re.sub('[^a-z0-9]', '', s)
 
     # s[::-1] → 문자열 역순
