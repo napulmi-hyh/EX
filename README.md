@@ -14,7 +14,12 @@
 2. - reverseString  (1. 투포인트를 이용한 스왑 2. reverse)
 3. - reorderLogFile (1. 문자로그가 숫자로그 앞에 2. 가장 앞은 식별자
                       3. 문자가 동일한경우 식별자 순, 4. 숫자로그는 순서대로)/ lambda 매개변수:반환값
-4. most Common Word(가장 흔한 단어) 
+4. most Common Word - 가장 흔한 단어
+         1. 정규식 문자 정리 : re.sub()문자열 치환 함수/ [^\w] 문자 숫자,밑줄 제외 모든문자
+         2. 리스트 컴프리핸션 : [word for word in ~ if word not in banned]
+         3. 단어 개수 세기 : collections.Counter(words) : 각 단어가 몇 번 나왔는지 자동으로 세줌
+         4. counts.most_common(1) 가장 많이 나온 단어 1개 반환- 결과 : [('ball', 2)]
+         5. 단어만 꺼내기 [0][0] 첫번째요소("hello",2) / 그중 단어("hello")
 ## 📘 Array
 - (추가 예정)
 
