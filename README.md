@@ -20,6 +20,9 @@
           3. 단어 개수 세기 : collections.Counter(words) : 각 단어가 몇 번 나왔는지 자동으로 세줌
           4. counts.most_common(1) 가장 많이 나온 단어 1개 반환- 결과 : [('ball', 2)]
           5. 단어만 꺼내기 [0][0] 첫번째요소("hello",2) / 그중 단어("hello")
+ 5. - 애너그램 groupAnagrams
+     defaultdict는 키가 없으면 list()로 값을 자동 생성해주는 딕셔너리
+     anagrams[''.join(sorted(word))].append(word) 
 ## 📘 Array
 - (추가 예정)
 
