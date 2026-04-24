@@ -1,0 +1,28 @@
+"""
+1. import 방식 일치
+  from collections import defaultdict / anagrams = defaultdict(list)
+  import collections /  anagrams = collections.defaultdict(list)
+2. anagrams = defaultdict(list)  list는 값이 아니라 함수 : list() x
+     defaultdict(list) = “없는 키를 쓰면 자동으로 빈 리스트 만들어줘”
+     기본값이 리스트인 딕셔너리 만듬(key값이 x 에러 -> 자동생성)
+  1️⃣ "a" 키 없음   2️⃣ list() 실행 → []    3️⃣ d["a"] = [] 자동 생성    4️⃣ .append("apple")
+3. anagrams[key] 
+  "aet" 키가 있으면 → 기존 리스트 반환  / 없으면 → defaultdict(list)가 자동으로 [] 생성
+  첫번째 결과 : {'aet': ['eat']} / {'aet': ['eat', 'tea']}
+4. 출력 형태 변환
+  return dict(anagrams)  #key + values 모두 확인 {'aet': ['eat', 'tea', 'ate'],~
+  return list(anagrams.items())   # 튜플형태 [ ('aet', ['eat', 'tea', 'ate']),~]
+  출력만 보고 싶을때 for key, value in anagrams.item():   / print(key, value)
+  => values() 값만 / keys()  키만 / items()  (키, 값)  /dict() 딕셔너리 전
+"""
+from collections import defaultdict
+
+def groupAnagrams(strs: List[str])-> List[List[str]]:
+    anagrams = defaultdict(list)          #기본값이 리스트인 딕셔너리 만듬(key값이 x 에러-> 자동생성)
+
+    for word in strs:
+        anagrams[''.join(sorted(word))].append(word)
+    return list(anagrams.values())
+
+a = ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']
+print(groupAnagrams(a))
