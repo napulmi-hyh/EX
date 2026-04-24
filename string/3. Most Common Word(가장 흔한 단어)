@@ -1,0 +1,39 @@
+"""
+1. 정규식 문자 정리 : re.sub()문자열 치환 함수/ [^\w] 문자 숫자,밑줄 제외 모든문자
+2. 리스트 컴프리핸션 : [word for word in ~ if word not in banned]
+3. 단어 개수 세기 : collections.Counter(words) : 각 단어가 몇 번 나왔는지 자동으로 세줌
+4. counts.most_common(1) 가장 많이 나온 단어 1개 반환- 결과 : [('ball', 2)]
+5. 단어만 꺼내기 [0][0] 첫번째요소("hello",2) / 그중 단어("hello")
+"""
+
+"""
+# import collections => 자료구조를 더 편하게 쓰도록 도와주는 표준 라이브러리
+1. Counter : 개수 세는 전용 도구
+words = ["a","b","a","c","b","a"]
+print(Counter(words)) / {'a':3,'b':2,'c':1}
+counts.most_common(1) : 가장 많이 사용
+2. deque(큐/스택 최강자) : 앞뒤에서 빠르게 넣고 빼기
+d = deque([1,2,3])  / d.append(4)/d.appendleft(0)/d.pop() / d.popleft()
+3. defaultdict : 키 없을 때 자동 생성
+d = defaultdict(int)
+d["a"]+=1 / print(d) / {'a':1}
+"""
+
+import re
+import collections
+from typing import List
+
+def mostCommonWord(paragraph: str, banned: List[str]) -> str:
+    words = [word for word in re.sub(r'[^\w]', ' ', paragraph)
+             .lower().split()
+             if word not in banned]
+
+    counts = collections.Counter(words)
+    return counts.most_common(1)[0][0]
+
+paragraph = "Bob hit a ball, the hit BALL flew far after it was hit."
+banned =["hit"]
+a = mostCommonWord(paragraph, banned)
+print(a)
+
+
