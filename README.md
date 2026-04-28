@@ -22,7 +22,12 @@
           5. 단어만 꺼내기 [0][0] 첫번째요소("hello",2) / 그중 단어("hello")
  5. - 애너그램 groupAnagrams
      defaultdict는 키가 없으면 list()로 값을 자동 생성해주는 딕셔너리
-     / anagrams[''.join(sorted(word))].append(word) 
+     / anagrams[''.join(sorted(word))].append(word)
+
+6. 가장 긴 팰린드롬 부분 문자열 XXX
+### 3분 선형 자료 구조
+7. 두수의 합
+   - 브루트 포스로 계산 : 
 ## 📘 Array
 - (추가 예정)
 
