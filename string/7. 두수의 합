@@ -22,3 +22,6 @@ def twoSum(nums:List[int], target:int)-> List[int]:
 nums = [2, 7, 11, 15]
 target = 9
 print(twoSum(nums, target))
+
+# 첫 번째 수를 뺀 결과 키 조회
+           
